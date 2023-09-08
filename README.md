@@ -1,5 +1,28 @@
 # Setpoint Energy Savings Calculator
 
+## install
+```
+sudo apt install libcurl4-openssl-dev libssl-dev
+pip install -r requirements.txt
+```
+
+## cloud build api
+```
+CREDENTIALS:
+-> Application Data
+Usin Defaults
+
+```
+
+## config
+```
+# test locally
+python main.py
+
+# docker test
+
+```
+
 An online tool for fast energy saving estimations of expanded temperature ranges.
 
 ## Project Objective
@@ -70,5 +93,9 @@ gcloud auth list
 ```
 
 ```text
-gcloud run deploy energy-calc --source . --platform managed  --project=energy-calc-310016 --allow-unauthenticated --region=us-central1
+gcloud run deploy energy-calc --source . --platform managed  --project=cloud-run-install --allow-unauthenticated --region=europe-west2
 ```
+
+```testlocal
+# testing locally
+PORT=8080 && docker run -p 9090:${PORT} -e PORT=${PORT} cloud-run-source-deploy```

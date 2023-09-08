@@ -16,6 +16,7 @@ COPY . ./
 
 # Install production dependencies.
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install gunicorn
 
 EXPOSE 8080
 ENV PORT 8080
