@@ -6,6 +6,32 @@ sudo apt install libcurl4-openssl-dev libssl-dev
 pip install -r requirements.txt
 ```
 
+# run
+# local
+gunicorn main:app --reload
+
+# docker
+docker build . -t energy-calc
+
+docker run --rm --name energy-calc -e PORT=3000 -p 3000:3000 energy-calc
+
+# access docker shell
+docker exec -it energy-calc bash
+
+# check exists
+docker image ls
+
+# gcloud
+
+gcloud builds submit --tag gcr.io/pfolio-deploy-1/energy-calc
+
+gcloud run deploy --image gcr.io/pfolio-deploy-1/energy-calc --platform managed --port=3000
+
+```
+
+
+
+
 ## cloud build api
 ```
 CREDENTIALS:

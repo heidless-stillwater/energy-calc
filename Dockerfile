@@ -2,8 +2,10 @@
 # https://hub.docker.com/_/python
 FROM python:3.9-slim-buster
 
+#&& apt-get install gcc -y libcurl4-openssl-dev libssl-dev\
+
 RUN apt-get update \
-&& apt-get install gcc -y libcurl4-openssl-dev libssl-dev\
+&& apt-get install -y gcc libcurl4-openssl-dev libssl-dev \
 && apt-get clean
 
 # Allow statements and log messages to immediately appear in the Knative logs
